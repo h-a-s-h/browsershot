@@ -10,7 +10,7 @@ class CouldNotTakeBrowsershot extends Exception
     {
         $command = json_encode($command);
 
-        $message = <<<CONSOLE
+        $message = "
             For some reason Chrome did not write a file at `{$screenShotPath}`.
             Command
             =======
@@ -18,7 +18,7 @@ class CouldNotTakeBrowsershot extends Exception
             Output
             ======
             {$output}
-            CONSOLE;
+            ";
 
         return new static($message);
     }
